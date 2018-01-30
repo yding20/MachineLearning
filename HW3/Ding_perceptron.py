@@ -1,9 +1,16 @@
 #!/usr/bin/python3
 
-import numpy as np        
-import sys
+import numpy as np    
+import matplotlib.pyplot as plt
+import argparse    
 
-iterations = int(sys.argv[3])
+parser = argparse.ArgumentParser()
+parser.add_argument('--iterations', action='store', dest='iterations', type=int, default=1)
+parser.add_argument('--nodev', action='store_true', dest='noDevCriterion', default=False)
+argu = parser.parse_args()
+
+iterations = argu.iterations
+noDevCriterion = argu.noDevCriterion
 
 def ReadData(path):
     data = open(path, "r")
@@ -61,9 +68,11 @@ def Test(FeatureArraytest, Labeltest, eta):
 FeatureArray, Label = ReadData('a7a.train')  ### Reading the traning data
 
 eta =1
-if sys.argv[1] == '--nodev':
+if noDevCriterion :
+    print('Nodev')
     Devweights = np.zeros(len(FeatureArray[0,:]))
 else:
+    print('Dev')
     Devweights = Dev (FeatureArray, Label, eta, iterations)  
 weights = Train (FeatureArray, Label, eta, iterations, Devweights)  ### Traning using perceptron 
         
