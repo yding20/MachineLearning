@@ -1,0 +1,32 @@
+Email: yding20@ur.rochester.edu
+Course: CSC446
+Homework:#3   Implement SGD for SVM for the adult income dataset. Experiment with performance as a function of the capacity parameter C
+The homework description, which you can copy from the course page
+
+************ Files *********
+Ding_Yanhao_hw3.py    
+README file
+plot.py
+plot.png
+
+************ Algorithm *****
+Use Support Vector Machine (SVM) as classifier, in contrast to perceptrons, SVMs try to find the hyperplane maxmizing the margins between two classes.  Using Stochastic Gradient Descent (SGD) algorithm minimize the onjective function to realize weights update
+
+************ Instructions ***
+
+./Ding_Yanhao_hw3.py --epochs k --capacity c 
+where k should be int type, c should be float type
+
+************ Results *******
+
+I plot the Accuracy of Test data set and Dev data set versus the hyperparameter C, showing in the attached plot.png file. Firstly, Test Accuracy and Dev Accuracy show similar trend, the accuracy increase with the increase of capacity from 10^(-3) to a little more than 10^-(-2), then the accuracy reaches a maximum state. When capacity continue increasing to more than 10^(1), the predict accuracy will decrease and the oscilation of the curve is significant. 
+
+************ Your interpretation **** (Attention: important!)
+
+From the above results, learning rate is very important that a learning rate from 10^(-2.5) to 10^(-1.5) yields the best result, and that a learning rate larger than 10^(0) yields a significant drop of the performance.
+
+************ References ************
+https://docs.python.org/3/library/argparse.html  Read into the argument from terminal command
+https://maviccprp.github.io/a-perceptron-in-just-a-few-lines-of-python-code/
+http://www.robots.ox.ac.uk/~az/lectures/ml/lect2.pdf
+Discussion with Xin Bian

@@ -54,10 +54,10 @@ def Test(FeatureArraytest, Labeltest, eta):
 #FeatureArray, Label = ReadData('/u/cs246/data/adult/a7a.train')  ### Reading the traning data 
 FeatureArray, Label = ReadData('a7a.train')  ### Reading the traning data
 
-#FeatureArraytest, Labeltest = ReadData('/u/cs246/data/adult/a7a.test')  ### Reading the test data
+#FeatureArrayTest, LabelTest = ReadData('/u/cs246/data/adult/a7a.test')  ### Reading the test data
 FeatureArrayTest, LabelTest = ReadData('a7a.test')  ### Reading the test data
 
-#FeatureArraytest, Labeltest = ReadData('/u/cs246/data/adult/a7a.test')  ### Reading the dev data
+#FeatureArrayDev, LabelDev = ReadData('/u/cs246/data/adult/a7a.dev')  ### Reading the dev data
 FeatureArrayDev, LabelDev = ReadData('a7a.dev')  ### Reading the test data
 
 AccuracyTest = []
@@ -77,3 +77,4 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.show
 plt.savefig('plot.png')
+
